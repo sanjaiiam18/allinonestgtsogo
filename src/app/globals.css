@@ -1,3 +1,4 @@
+/* Global styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,23 +6,69 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #0070f3; /* Primary button color */
+  --button-hover: #005bb5; /* Button hover color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-color: #1e90ff; /* Dark mode primary color */
+    --button-hover: #1c7ed6; /* Dark mode button hover color */
   }
 }
 
+/* Body styles */
 body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Main container styles */
+.ai-function-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full height */
+  padding: 20px;
+}
+
+/* Title styles */
+h1 {
+  font-size: 2.5rem; /* Larger title font size */
+  margin-bottom: 30px; /* Space below the title */
+  color: var(--primary-color);
+}
+
+/* Button container styles */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 20px; /* Space between buttons */
+}
+
+/* Individual button styles */
+.ai-function-button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  padding: 12px 20px; /* Padding inside buttons */
+  font-size: 1.2rem; /* Button font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  width: 200px; /* Fixed width for buttons */
+  text-align: center; /* Center text in buttons */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+/* Button hover effect */
+.ai-function-button:hover {
+  background-color: var(--button-hover);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
 }

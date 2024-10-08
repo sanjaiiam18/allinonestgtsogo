@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme colors */
+:root {
+  --background: #00bfff; /* Light background color */
+  --foreground: hsl(0, 0%, 9%); /* Light foreground color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* Dark background color */
+    --foreground: #ededed; /* Dark foreground color */
+  }
+}
+
+/* General body styles */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 150px; /* Space for fixed input box */
+}
+
+/* Importing custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
+
+/* Container for messages */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+  justify-content: flex-end; /* Pushes messages to the bottom */
+}
+
+/* Messages container */
+.messages-container {
+  flex: 1; /* Takes remaining space */
+  padding: 10px;
+  overflow-y: auto; /* Scroll if messages overflow */
+  display: flex;
+  flex-direction: column; /* Stacks messages vertically */
+}
+
+/* Individual message styling */
+.message {
+  padding: 10px; /* Padding inside message box */
+  margin: 10px; /* Margin around message box */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 60%; /* Max width of message box */
+  word-wrap: break-word; /* Wrap long words */
+}
+
+/* User message styling */
+.user-message {
+  background-color: rgb(236, 236, 236); /* Light background for user messages */
+  border: 1px solid #ccc; /* Border for user messages */
+  align-self: flex-start; /* Aligns user messages to the left */
+}
+
+/* AI message styling */
+.ai-message {
+  background-color: aqua; /* Background for AI messages */
+  border: 1px solid #00bcd4; /* Border for AI messages */
+  align-self: flex-end; /* Aligns AI messages to the right */
+}
+
+/* Input box styling */
+.responsebox {
+  position: absolute;
+  bottom: 2%;
+  right: 23%;
+  width: 50%; /* Width of the input box */
+  padding: 16px; /* Padding inside the box */
+  border: 1px solid #ccc; /* Border for input box */
+  border-radius: 10px; /* Rounded corners */
+  margin: 10px; /* Margin around input box */
+  font-family: "Roboto Mono", monospace; /* Font for input */
+}
